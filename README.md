@@ -4,7 +4,7 @@
 
 | Week |   Date |                                                                     Topic                                                              |                    Comments                   |
 |:----:|:------:|:--------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------:|
-| 1    | 20-Jan | [Introduction to Forecasting](Lectures/1.Intro/1.Intro_Time_Series.pdf)  <br>[Introduction to R](Lectures/1.Intro/R_Introduction.html) |                                               |
+| 1    | 20-Jan | [Introduction to Forecasting](Lectures/1.Intro/1.Intro_Time_Series.pdf)  <br>[Introduction to R](http://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS21/blob/main/Lectures/1.Intro/R_Introduction.html) |                                               |
 | 2    | 25-Jan | Introduction to R \&   RMarkdown                                                                                                       |                                               |
 |      | 27-Jan | Introduction to R \&   RMarkdown                                                                                                       | [HW1 Due - Jan 29](https://www.datacamp.com/) |
 | 3    | 1-Feb  | Exploring \& Visualizing Time   Series                                                                                                 |                                               |
