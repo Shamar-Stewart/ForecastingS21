@@ -4,7 +4,7 @@
 
 | Week |   Date |                                                                        Topic                                                                 |                    Comments                   |
 |:----:|:------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------:|
-| 1    | 20-Jan | <br>[Introduction to Forecasting](Lecture Slides/1.Intro/1.Intro_Time_Series.pdf1.Intro_Time_Series.pdf) </br> \& [R](R_Introduction.html) |                                               |
+| 1    | 20-Jan | <br>[Introduction to Forecasting](Lectures/1.Intro/1.Intro_Time_Series.pdf) </br> \& [R](R_Introduction.html) |                                               |
 | 2    | 25-Jan | [Introduction to R](R_Introduction.html) \&   RMarkdown                                                                                                             |                                               |
 |      | 27-Jan | Introduction to R \&   RMarkdown                                                                                                             | [HW1 Due - Jan 29](https://www.datacamp.com/) |
 | 3    | 1-Feb  | Exploring \& Visualizing Time   Series                                                                                                       |                                               |
