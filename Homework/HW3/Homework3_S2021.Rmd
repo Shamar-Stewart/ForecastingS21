@@ -1,0 +1,60 @@
+---
+title: 'Applied Economic Forecasting'
+author: "Put Your Name here"
+date: |
+    Homework #3a - Spring `r format(Sys.Date(),"%Y")` 
+output: pdf_document
+header-includes:
+ \usepackage{float}
+geometry: margin=0.8in
+---
+
+```{r setup, include=FALSE}
+library(fpp2)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = 'H') 
+theme_set(theme_bw()) #Feel free to change if you like
+```
+
+**Instructions**: In all cases, please ensure that your graphs and visuals have properly titles and axes labels, where necessary. For your convenience, I have posted my R markdown file on our course website so that you can open and alter as you see fit. Refer to the output, whenever appropriate, when discussing the results. **Lastly, remember that creativity (coupled with relevance) will be rewarded.**
+
+# Explaining US Residential Natural Gas Consumption
+
+**In the last homework, you were introduced to the USNG data from the U.S. Energy Information Administration (EIA). This week, your job is to explore the relationship between Residential NG consumption across the months of the year. This might sound very simple but sometimes that is all we need.**
+
+1. Using the codes from your last homework, import the NG consumption data from the EIA into `R`. In particular, repeat steps 1 -- 5 of Homework #2. **Place this in a single code chunk. At the end of this process you should have** `ng2`.
+
+
+2. Present a time plot of `ng2`. Use the `geom_point` command to add the data points to your graphs
+
+
+3. Using the `ggsubseriesplot` and `ggACF` commands, **briefly comment** on possible seasonality and trends in the consumption data.\label{seasons}
+
+
+
+4. Using the `tslm` command, estimate a regression of `ng2` on the seasonal dummies. Store the estimation results in a variable called `fit1`.
+
+
+5. Now use the summary function to report the results of `fit1`.
+
+
+6. Interpret the value of the intercept. To get full credit here, you discussion must discuss both the sign and magnitutde of the coefficient.
+
+
+7. How would you **interpret** the value on `season11`? Again, to get full credit here, you discussion must discuss both the sign and magnitude of the coefficient.
+
+
+8. Comment on the magnitude and interpret the coefficient of determination of this model. 
+
+
+9. Produce a time plot of the fitted values and actual data over full sample.
+
+
+10. Conduct a residual check and comment on any discernible pattern in the residuals of `fit1`. Specifically, are any of the assumptions possibly violated?
+
+
+11. Use the `forecast` function to produce and plot the predictions for the next 2 years from `fit1`. **Store this forecast to fore.fit1 before you plot the forecasts.**
+
+
+12. What other variables, if any would you include in your regression?
+
