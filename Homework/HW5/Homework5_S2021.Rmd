@@ -1,0 +1,62 @@
+---
+title: 'Applied Economic Forecasting'
+author: "Your Name Here"
+date: |
+    Homework #5 - Spring `r format(Sys.Date(),"%Y")` 
+output: pdf_document
+header-includes:
+ \usepackage{float}
+geometry: margin=0.8in
+---
+
+```{r setup, include=FALSE}
+rm(list = ls())
+library(fpp2); library(openxlsx)
+library(seasonal)
+theme_set(theme_bw() + theme(legend.position="bottom"))
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "") 
+```
+
+**Instructions**: In all cases, please ensure that your graphs and visuals have properly titles and axes labels, where necessary. For your convenience, I have posted my R markdown file on our course website so that you can open and alter as you see fit. Refer to the output, whenever appropriate, when discussing the results. **Lastly, remember that creativity (coupled with relevance) will be rewarded.**
+
+# Problem
+
+A (relatively) new local farming Co-operative currently has no forecasting system in  place and would like to make sensible forecast predictions of sales. They heard that the AAEC department has a forecasting course and asked if I would allow my students to work on this on their behalf.
+
+The CEO, John Bear, has sent over the monthly sales data for the last 2 years. The relevant data is stored in the series below:
+
+```{r}
+sales <- c(430, 420, 436, 452, 477, 420, 398, 501, 514, 532, 512, 410,
+           442, 449, 458, 472, 463, 431, 400, 487, 503, 503, 548, 432)
+```
+
+1. Declare the `sales` data as a ts object ending at December 2019. Store this this as `ts.sales`
+
+2. Using appropriate graphs, visualize the data and briefly comment on any relevant properties that you deem pertinent. In particular, does there appear to be seasonality? And if so, what is the nature of same?
+
+3. \label{naive} The CEO informs us that they currently use the last period's sales to inform this month's production numbers. Use a `naive` forecast to generate the monthly sales forecasts for February 2018 through to December 2019. Produce a plot of the *actual* and *fitted values*. 
+
+**It would help if you proceeded as follows:**
+
+- Store the estimation results as `fit.naive`.
+- Produce an `autoplot` of `ts.sales` and `autolayer` the fitted values from `fit.naive`. 
+
+*If you do not remember how to do this, try using the `attributes` function on `fit.naive`. This will return all the elements we can extract from the estimation results.*
+
+4. \label{ses.5} Use simple exponential smoothing with a smoothing constant of 0.5 (`alpha = 0.5`), and the initial value as January 2018's Sales, to generate sales for each month. Save the results as `fit.ses` and then pass it to the `autoplot` function. Lastly, add the fitted values as an `autolayer`. *Alternatively, you can `cbind()` both and pass it as a single argument to the `autoplot` command*.
+
+5. Do you think that your forecasts in \ref{naive} and \ref{ses.5} is likely to generate accurate forecasts for this Co-operative? **Briefly explain**
+
+
+6. Using a Holt-Winters multiplicative model with $\alpha = \gamma = 0.5$ produce a plot of the `fitted` and actual values over the sample. Store your model estimation results as `fit.hw` before producing the plot.
+
+7. What are the forecasted values for January - March 2020?
+
+8. Which of the three forecasting models (`fit.naive`, `fit.ses`, or `fit.hw`) provides the better forecast? Use the `RMSE`, `MAPE`, and `MSE` to make your final determination. You are required to create a table using the `kable` command here.
+
+9. Produce a `ggAcf` plot of the residuals of your preferred model, also comment on whether the residuals appear to be white noise. 
+
+10. From your preferred model, show the forecast plot for the next 12 months.
+
+
