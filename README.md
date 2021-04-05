@@ -25,7 +25,7 @@
 |      | 24-Mar | ARIMA Models                                                                                                                           |                                               |
 | 11   | 29-Mar | ARIMA Models                                                                                                                           | **Project Proposal Due**                      |
 |      | 31-Mar | ARIMA Models                                                                                                                           |                                               |
-| 12   | 5-Apr  | VAR Models                                                                                                                             |                                               |
+| 12   | 5-Apr  | VAR Models                                                                                                                             |   [HW5 (pdf) - Due April 12](Homework/HW5/Homework5_S2021.pdf)  <br> [HW5 (Rmd) - Due April 12](Homework/HW5/Homework5_S2021.Rmd)                                              |
 |      | 7-Apr  | VAR Models                                                                                                                             |                                               |
 | 13   | 12-Apr | VAR Models                                                                                                                             |                                               |
 |      | 14-Apr | ARCH \& GARCH Models                                                                                                                   |                                               |
