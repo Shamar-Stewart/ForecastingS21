@@ -1,0 +1,92 @@
+---
+title: 'Applied Economic Forecasting'
+author: "Your Name here"
+date: |
+    Homework #6 - Spring `r format(Sys.Date(),"%Y")` 
+output: pdf_document
+header-includes:
+ \usepackage{float}
+geometry: margin=0.8in
+---
+
+```{r setup, include=FALSE}
+
+rm(list = ls())
+library(fpp2); library(openxlsx);library(quantmod)
+library(seasonal); library(gridExtra);library(urca)
+theme_set(theme_bw() + theme(legend.position="bottom"))
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval = FALSE)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "") 
+```
+
+**Instructions**: In all cases, please ensure that your graphs and visuals have properly titles and axes labels, where necessary. For your convenience, I have posted my R markdown file on our course website so that you can open and alter as you see fit. Refer to the output, whenever appropriate, when discussing the results. **Lastly, remember that creativity (coupled with relevance) will be rewarded.**
+
+# Question 1: Financial Market Data
+
+You are interested in forecasting the price of three major companies (Apple, Microsoft, and Intel) on the stock market. You therefore pull the stock price data from Yahoo-Finance, estimate ARIMA models, and use them to generate your best guess of future prices. 
+
+**Select one of the three (3) companies that most appeals to you and use it for the analyses that follow.**
+
+(a) Edit my code below to use the `quantmod` package to pull the closing stock prices for AAPL (Apple), MSFT (Microsoft), or INTC (Intel) from yahoo finance for the period April 1, 2014 to April 30, 2019.
+- By default, `getSymbols` will pull the daily Prices (Open, High, Low, Close, Adj Close) and Volume. We will need to use the `to.monthly` function to convert to monthly.
+- We are interested in the closing prices so that column will need to be extracted.
+
+```{r import.yahoo, message=FALSE}
+sDate <- as.Date("2014-04-01", format =c("%Y-%M-%d"))
+eDate <- as.Date(xxxx, format =c(xxxx))
+
+tickers <- c("AAPL","MSFT","INTC") 
+
+# Use the tickers argument to choose your preferred stock
+getSymbols(Symbols = xxxq, src = "yahoo", from = sDate, to = eDate)
+xxx2 <- to.monthly(xxxq)[,"xxxq.Close"]
+```
+
+(b) Convert your series to a ts object with the appropriate frequency and start date.
+
+(c) Provide a time-series plot along with ACF plot for your chosen series in (b) and comment on its stationarity. 
+
+(d) Convert your data to a stationary series if necessary and then report the autocorrelation functions for this new series. **Be sure to explain how you rendered the series stationary and how you determined it was stationary.**
+
+
+(e) Confirm your conclusion from (d) using the `ur.df` function. **Be sure to explain the test hypothesis and conclusion.** 
+
+
+(f) Now that we know the order of integration for your series, we can proceed to selecting the best ARIMA(*p*,*d*,*q*) model. 
+
+- Present the `ggtsdisplay` of the *stationary version* of your series in (a).
+
+- Based on your analysis above, comment on the possible ARIMA model contender(s). 
+
+
+(g) Estimate the model suggested in part (f) and report the diagnostic checks to justify the adequacy of your model. Be sure to comment on the Ljung-Box test results.
+[Hint: You can achieve this by passing your ARIMA model fit to the `checkresiduals()` command.]
+
+
+(h) Present an autoplot of the forecast for the remaining 8 months of 2019. [*Hint: It would help to store the forecasts before you plot them, you will need this for part (i).*]
+
+(i) In a table using the kable command, report the forecasted point estimates from part (h). Make sure to round to 2 decimal places.
+
+
+\newpage
+# Question 2: Forecasting CFK's Sales growth 
+
+As a part of your job interview, you have been tasked with forecasting the sales growth for a fast food company called CFK. The file `cfk_sales.csv` contains quarterly sales growth figures for 1995Q1 to 2019Q4.
+
+(a) Using the code below, pull the sales data from the HW6 folder on our Github site. Report the time series plot and discuss it.
+*You might find it useful to explore potential seasonality in the series.*
+```{r cfk, fig.height= 3, fig.cap="Plot of CFK Sales growth"}
+path <- "https://raw.github.com/Shamar-Stewart/ForecastingS21/main/Homework/HW6/"
+cfk <- ts(read.csv(pppp)[,2],frequency = yyy, start = xxxx)
+```
+
+(b) Explore the stationarity of the data and apply appropriate transformations, if necessary, to render it stationary. *Be sure to explain your process here.*
+
+(c) Produce a `ggtsdisplay()` of the transformed series and comment on the ACF and PACF. Based on your analysis, determine the appropriate ARIMA model. *Be sure to explain why you chose one model over the other*.
+
+(d) Report model diagnostics to justify the adequacy of your model in part (c).
+
+(e) Use the desired model from part (d) to plot the forecasted growth in sales for 2020. 
+
+
+
