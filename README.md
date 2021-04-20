@@ -35,5 +35,5 @@
 |      | 28-Apr | Forecasting with Nonlinear Models                                                                                                      |                                               |
 | 16   | 3-May  | Forecasting with Nonlinear Models                                                                                                      |                                               |
 |      | 5-May  | **EXAM 2**                                                                                                                             |                                               |
-|      | 7-May  | **FINAL PROJECT DUE - 10:00 AM**                                                                                                       |                                               |
+|      | 7-May  | **FINAL PROJECT DUE - 10:00 AM**                                                                                                       |  [Final Project Template](Paper%20Template/)                                             |
 |      |        |                                                                                                                                        |                                               |
